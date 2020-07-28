@@ -1,7 +1,7 @@
 baseURL = "https://lihua-official.github.io/blog"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = "Even - A super concise theme for Hugo"
+title = "某部落格"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 enableEmoji = true
