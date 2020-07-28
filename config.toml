@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://lihua-official.github.io/blog"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "Even - A super concise theme for Hugo"
@@ -32,22 +32,22 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   name = "Home"
   weight = 10
   identifier = "home"
-  url = "/"
+  url = "/blog/"
 [[menu.main]]
   name = "Archives"
   weight = 20
   identifier = "archives"
-  url = "/post/"
+  url = "/blog/post/"
 [[menu.main]]
   name = "Tags"
   weight = 30
   identifier = "tags"
-  url = "/tags/"
+  url = "/blog/tags/"
 [[menu.main]]
   name = "Categories"
   weight = 40
   identifier = "categories"
-  url = "/categories/"
+  url = "/blog/categories/"
 
 [params]
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
