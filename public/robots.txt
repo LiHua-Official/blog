@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://lihua-official.github.io/blog/sitemap.xml
