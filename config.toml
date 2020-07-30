@@ -1,4 +1,4 @@
-baseURL = "https://lihua-official.github.io/blog"
+baseURL = "https://lihua-official.github.io"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 title = "某部落格"
