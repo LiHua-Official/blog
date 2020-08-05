@@ -1,6 +1,6 @@
 name: github pages
 
-on: [push]
+on: repository_dispatch
 
 jobs:
   deploy:
