@@ -1,7 +1,13 @@
-image: ubuntu-18.04
+image: registry.gitlab.com/pages/hugo:latest
+ 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 pages:
-  script:
-      - hugo -D
-  artifacts:
-      paths:
-          - public
+  script:
+    - hugo -D
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
