@@ -1,0 +1,7 @@
+image: ubuntu-18.04
+pages:
+  script:
+      - hugo -D
+  artifacts:
+      paths:
+          - public
