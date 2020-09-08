@@ -13,11 +13,12 @@ draft: true
 
 # 准备
 ## 下载ISO镜像
-[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso)
-
-## 检验镜像文件
-
-
+[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso)  
+![下载](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/2020-09-08_18-44.png)
+## 检验镜像文件[可选]
+[下载用来验证签名的程序](https://www.gnupg.org/download/index.html#sec-1-2)  
+![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/2020-09-08_18-55.png)
+> 使用应该不要说明吧
 # 安装
 > 本文以`<Tab>`表示Tab键
 ## 验证启动模式
@@ -31,6 +32,5 @@ ls /sys/firmware/efi/efivars
 ### Wifi
 执行 `iwctl` 进入交互模式  
 然后显示交互式提示，前缀为`[iwd]#`  
-```
-station wl<Tab> connect <Tab>
-```
+通过 `station wl<Tab> connect <Tab>` 选择SSID连接
+### 
