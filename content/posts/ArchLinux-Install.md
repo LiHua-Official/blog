@@ -6,7 +6,7 @@ description: "有点脱离WIKI的安装方式，并附带一点点维护技巧"
 
 categories: ["教程"]
 
-tags: ["Arch"]
+tags: ["Arch","Linux"]
 
 draft: true
 ---
