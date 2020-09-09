@@ -1,0 +1,13 @@
+---
+baseurl: "/"
+DefaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+languageCode: "zh-cn"
+title: "Li Hua's Blog"
+theme: "even"
+metaDataFormat: "yaml"
+algolia:
+  index: "Blog"
+  key: "1e93cdb6af2693a907fd857fe2a3d96a"
+  appID: "X5LDJ64PP2"
+---
