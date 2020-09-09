@@ -91,7 +91,7 @@ timedatectl set-ntp true
 ### 查看物理总内存（知道你设备物理内存的可以忽略这一步）
 
 ```bash
-echo `free -m | awk 'NB==2{print $2}'`MiB
+echo `free -m | awk 'NR==2,NF=2'`MiB
 ```
 
 > 记住数值，后面用得到  
