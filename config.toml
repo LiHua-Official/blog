@@ -574,7 +574,7 @@ uglyURLs = false
     #      的优先级高于此处
 
     ## Disqus
-    enableDisqus = false
+    enableDisqus = true
     disqusShortname = ""
 
     ## Valine
@@ -599,7 +599,7 @@ uglyURLs = false
     # 说明：https://valine.js.org/
 
     ## Utterances
-    enableUtterances = false
+    enableUtterances = true
     utterancesRepo = ""
     utterancesIssueTerm = "pathname"
     utterancesTheme = "github-light"
