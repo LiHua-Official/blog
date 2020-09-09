@@ -1026,7 +1026,7 @@ uglyURLs = false
     # 仓库地址
     repoURL = "https://github.com/LiHua-Official/blog"
     # 编辑地址
-    repoEditURL = "https://gitee.com/LiHua-Official/blog/edit/master"
+    repoEditURL = "https://gitee.com/-/ide/project/LiHua-Official/blog/edit/master/-"
 
     # Git 的图标
     gitIcon = "code-branch"
