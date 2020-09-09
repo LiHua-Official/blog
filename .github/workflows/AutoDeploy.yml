@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-node-
       
       - name: Build
-        run: hugo -D
+        run: hugo -D --debug
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

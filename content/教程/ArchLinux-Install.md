@@ -4,8 +4,6 @@ date: 2020-09-08T15:28:15+08:00
 
 description: "有点脱离WIKI的安装方式，并附带一点点维护技巧"
 
-categories: ["教程"]
-
 tags: ["Arch","Linux"]
 
 draft: true
