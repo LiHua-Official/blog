@@ -1,7 +1,7 @@
 ##########################################
 # 站点配置
 
-baseURL = "https://example.com/"
+baseURL = "https://lihuablog.tk/"
 title = "Li Hua's Blog"
 languageCode = "zh-CN"
 hasCJKLanguage = true
@@ -48,11 +48,6 @@ uglyURLs = false
 [permalinks]
     categories = "/categories/:slug/"
     tags = "/tags/:slug/"
-
-# 类别
-[taxonomies]
-    category = "categories"
-    tag = "tags"
 
 # 修改时间
 [frontmatter]
@@ -236,7 +231,7 @@ uglyURLs = false
     # 说明：对弹性布局的顶栏无效
 
     # 背景
-    headerBackground = "linear-gradient(90deg, #f795331a 0, #f370551a 15%, #ef4e7b1a 30%, #a166ab1a 44%, #5073b81a 58%, #1098ad1a 72%, #07b39b1a 86%, #6dba821a 100%)"
+    headerBackground = "no-repeat url('https://api.vvhan.com/api/bing');"
     # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
 
     # 顶栏布局
@@ -294,7 +289,7 @@ uglyURLs = false
     # 3. posts     文章摘要
     # 4. page      普通页面
 
-    homeLayout = "poetry"
+    homeLayout = "posts"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
@@ -328,7 +323,7 @@ uglyURLs = false
     #      Open Graph、Atom、RSS
 
     # 站点的创建时间
-    siteCreatedTime = "1969-07-20T20:17:43+00:00"
+    siteCreatedTime = "2019-12-31T20:17:43+00:00"
     # 注意：请保持此格式，更改数字
 
     # 站点的推特帐号
@@ -353,7 +348,7 @@ uglyURLs = false
     # 的树状分类，故如需保留树状分类，建议适应
     # Hugo 的设计理念——分区。
 
-    categoryBy = "categories"
+    categoryBy = "sections"
     # 注意：如果你设置为 `sections`，请务必将
     #      此配置文件中的类别（taxonomies）中
     #      的 `categories` 删除，不然分类页
@@ -446,7 +441,7 @@ uglyURLs = false
     # 说明：分区的名字即站点的 content 目录下
     #      的文件夹的名字。
 
-    # mainSections = ["posts"]
+    mainSections = ["posts"]
 
 
     ######################################
@@ -589,9 +584,9 @@ uglyURLs = false
     disqusShortname = ""
 
     ## Valine
-    enableValine = false
-    valineAppId = ""
-    valineAppKey = ""
+    enableValine = true
+    valineAppId = "Vjwc0IOv21oNHwRzzVY6g1Ef-MdYXbMMI"
+    valineAppKey = "m8auIUBfBRjsDuXPQj33PE0t"
     valinePlaceholder = "Just go go"
     valinePath = ""
     valineAvatar = "mm"
@@ -605,7 +600,7 @@ uglyURLs = false
     valineServerURLs = ""
     valineEmojiCDN = ""
     valineEmojiMaps = {}
-    valineEnableQQ = false
+    valineEnableQQ = true
     valineRequiredFields = []
     # 说明：https://valine.js.org/
 
@@ -735,7 +730,7 @@ uglyURLs = false
     readingTimeIcon = "clock"
 
     # 是否显示不蒜子页面浏览量
-    displayBusuanziPagePV = false
+    displayBusuanziPagePV = true 
     # 不蒜子页面浏览量的图标
     busuanziPagePVIcon = "eye"
     # 说明：仅在生产环境（production）下渲染
@@ -820,10 +815,10 @@ uglyURLs = false
     enableImageHost = false
 
     # 图片外链地址
-    imageHostURL = "https://example.com/"
+    imageHostURL = "https://cdn.jsdelivr.net/gh/LiHua-Official/pic"
 
     # 是否将 HTML 的头部元数据中的图片链接也替换为外链
-    headAlso = false
+    headAlso = true 
 
 
     ######################################
@@ -1021,17 +1016,17 @@ uglyURLs = false
     # 文章的 Git 版本信息
 
     # 是否开启
-    enablePostGitInfo = false
+    enablePostGitInfo = true
 
     # 是否显示（全局设置）
-    displayPostGitInfo = false
+    displayPostGitInfo = true
     # 说明：文章的 Front Matter 中的 `gitinfo`
     #      的优先级高于此处
 
     # 仓库地址
-    repoURL = ""
+    repoURL = "https://github.com/LiHua-Official/blog"
     # 编辑地址
-    repoEditURL = ""
+    repoEditURL = "https://gitee.com/LiHua-Official/blog/edit/master/content/posts"
 
     # Git 的图标
     gitIcon = "code-branch"
