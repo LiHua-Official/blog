@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://lihuablog.tk/categories/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/about/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/tags/arch/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/posts/archlinux-install/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/tags/linux/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/posts/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/tags/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lihuablog.tk/posts/hello-world/</loc>
+    <lastmod>2020-09-09T17:15:35+08:00</lastmod>
+  </url>
+  
+</urlset>
