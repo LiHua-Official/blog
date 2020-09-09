@@ -45,12 +45,21 @@ ip addr show
 ```bash
 ip addr add dev <Tab> 
 ```
-ping某个测试网络连通专用网站。
+选择设备，`<Tab>` 输入IP地址，回车。  
+> 注意：IP地址应与网关处于同一子网且不得与现有设备的IP地址冲突。 
+  
+ping[某个测试网络连通专用网站](https://baidu.com)。
 ```bash
-ping -c 3baidu.com
+ping -c 3 baidu.com
 ```
 如果正常，继续。  
 更新系统时钟。
 ```bash
 timedatectl set-ntp true
 ```
+## 分区  
+查看物理内存
+```bash
+echo `free -m | awk 'NB==2{print $2}'`MiB
+```
+> 记住数值，后面用得到  
