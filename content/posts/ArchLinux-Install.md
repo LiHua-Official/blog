@@ -110,14 +110,19 @@ fdisk -l
 #### 备份efi方法示例（git）
 
 ##### 注册帐号（已有Gihub，Gitlab，Gitee等平台帐号的童鞋可忽略）
+
 [Gitee](https://gitee.com/signup)
 为什么这里选Gitee，因为国内平台，没经过墙，搬东西比较快。
 就四个空，而且还是中文提示，姓名那个空可以随便填，应该会填吧！
+
 ##### 创建仓库
+
 [Github](https://github.com/new)
 [Gitlab](https://gitlab.com/projects/new)
 [Gitee](https://gitee.com/projects/new)
+
 ##### 备份操作
+
 ```bash
 # 安装git
 yes | pacman -Sy git
