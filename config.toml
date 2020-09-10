@@ -223,7 +223,7 @@ uglyURLs = false
     # 说明：对弹性布局的顶栏无效
 
     # 背景
-    headerBackground = "no-repeat url('https://cdn.jsdelivr.net/gh/LiHua-Official/BingPic/latest.jpeg');"
+    headerBackground = "no-repeat url('https://cdn.jsdelivr.net/gh/LiHua-Official/BingPic/latest/zh_CN.jpeg');"
     # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
 
     # 顶栏布局
