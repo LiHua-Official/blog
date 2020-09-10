@@ -105,7 +105,7 @@ fdisk -l
 当由实时系统识别，磁盘被分配给一个块设备如/dev/sda，/dev/nvme0n1或/dev/mmcblk0
 比如：
 ![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/Arch%20Linux-2020-09-09-09-46-40.jpg)
-如果存在EFI System分区，建议保留
+如果存在EFI System分区，建议备份
 
 #### 备份efi方法示例（git）
 
