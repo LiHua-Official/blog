@@ -49,6 +49,9 @@ uglyURLs = false
     categories = "/categories/:slug/"
     tags = "/tags/:slug/"
 
+[taxonomies]
+    tag = "tags"
+
 # 修改时间
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
