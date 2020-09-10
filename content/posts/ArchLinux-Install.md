@@ -96,7 +96,7 @@ echo `free -m | awk 'NR==2,NF=2'`MiB
 
 > 记住数值，后面用得到  
 
-## 查看分区表
+### 查看分区表
 
 ```bash
 fdisk -l
@@ -107,17 +107,17 @@ fdisk -l
 ![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/Arch%20Linux-2020-09-09-09-46-40.jpg)
 如果存在EFI System分区，建议保留
 
-### 备份efi方法示例（git）
+#### 备份efi方法示例（git）
 
-#### 注册帐号（已有Gihub，Gitlab，Gitee等平台帐号的童鞋可忽略）
+##### 注册帐号（已有Gihub，Gitlab，Gitee等平台帐号的童鞋可忽略）
 [Gitee](https://gitee.com/signup)
 为什么这里选Gitee，因为国内平台，没经过墙，搬东西比较快。
 就四个空，而且还是中文提示，姓名那个空可以随便填，应该会填吧！
-#### 创建仓库
+##### 创建仓库
 [Github](https://github.com/new)
 [Gitlab](https://gitlab.com/projects/new)
 [Gitee](https://gitee.com/projects/new)
-#### 备份操作
+##### 备份操作
 ```bash
 # 安装git
 yes | pacman -Sy git
@@ -138,7 +138,7 @@ cd
 umount /mnt
 ```
 
-### 分区示例布局（新手建议布局，老手请自己分区）
+#### 分区示例布局（新手建议布局，老手请自己分区）
 
 | 挂载点                | 划分                      | 分区类型              | 建议大小     |
 | :-------------------- | ------------------------- | --------------------- | ------------ |
@@ -146,7 +146,7 @@ umount /mnt
 | [SWAP]                | /dev/swap_partition       | Linux swap            | 总内存的一半 |
 | /mnt                  | /dev/root_partition       | Linux x86-64 root (/) | 剩余空间     |
 
-## 开始分区
+### 开始分区
 
 ```bash
 fdisk /dev/sdx
