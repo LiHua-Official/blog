@@ -1,5 +1,5 @@
 ---
-title: "ArchLinux安装"
+title: "ArchLinux单系统安装"
 date: 2020-09-08T15:28:15+08:00
 
 description: "有点脱离WIKI的安装方式，并附带一点点维护技巧"
@@ -127,6 +127,7 @@ fdisk -l
 # 安装git
 yes | pacman -Sy git
 # 挂载efi分区
+# 请将"/dev/sda1"改为你的EFI分区
 mount /dev/sda1 /mnt
 # 切换到efi分区
 cd /mnt
@@ -152,7 +153,14 @@ umount /mnt
 | /mnt                  | /dev/root_partition       | Linux x86-64 root (/) | 剩余空间     |
 
 ### 开始分区
-
+#### 进入分区模式
+请将"/dev/sda"改为你要安装系统的硬盘
 ```bash
-fdisk /dev/sdx
+fdisk /dev/sda
 ```
+然后，你可以看到
+![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/Arch%20Linux-2020-09-10-20-06-29.png)
+#### 删除所有分区
+`d`，`<Enter>`，`<Enter>`，`d`，`<Enter>`，`<Enter>`...
+#### 新建分区
+`n`
