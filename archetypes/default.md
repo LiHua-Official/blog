@@ -4,8 +4,6 @@ date: {{ .Date }}
 
 description: ""
 
-categories: [""]
-
 tags: [""]
 
 draft: true
