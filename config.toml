@@ -180,31 +180,37 @@ uglyURLs = false
         pre = "internal"
         post = "home"
     [[menu.main]]
+        url = "/posts/"
+        name = "文章"
+        weight = 2
+        pre = "internal"
+        post = "posts"
+    [[menu.main]]
         url = "/categories/"
         name = "分类"
-        weight = 2
+        weight = 3
         pre = "internal"
         post = "th"
     [[menu.main]]
         url = "/tags/"
         name = "标签"
-        weight = 3
+        weight = 4
         pre = "internal"
         post = "tags"
     [[menu.main]]
         url = "/about/"
         name = "关于"
-        weight = 4
+        weight = 5
         pre = "internal"
         post = "user-circle"
     [[menu.main]]
-        weight = 5
+        weight = 6
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 6
+        weight = 7
         identifier = "lang-switcher"
     [[menu.main]]
-        weight = 7
+        weight = 8
         identifier = "search"
         post = "search"
 
