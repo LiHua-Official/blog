@@ -107,7 +107,47 @@ fdisk -l
 ![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/Arch%20Linux-2020-09-09-09-46-40.jpg)
 如果存在EFI System分区，建议保留
 
-|a|b|
-| :-- | -- |
-|fgq|e6u|
-|gg|ggh|
+### 备份efi方法示例（git）
+
+#### 注册帐号（已有Gihub，Gitlab，Gitee等平台帐号的童鞋可忽略）
+[Gitee](https://gitee.com/signup)
+为什么这里选Gitee，因为国内平台，没经过墙，搬东西比较快。
+就四个空，而且还是中文提示，姓名那个空可以随便填，应该会填吧！
+#### 创建仓库
+[Github](https://github.com/new)
+[Gitlab](https://gitlab.com/projects/new)
+[Gitee](https://gitee.com/projects/new)
+#### 备份操作
+```bash
+# 安装git
+yes | pacman -Sy git
+# 挂载efi分区
+mount /dev/sda1 /mnt
+# 切换到efi分区
+cd /mnt
+# git信息配置
+git config --global user.email "你的电子邮箱"
+git config --global user.name "你的用户名"
+# 备份
+git add .
+git commit -m "Add EFI"
+git remote add origin 你的仓库链接
+git push -u origin master
+# 卸载分区
+cd
+umount /mnt
+```
+
+### 分区示例布局（新手建议布局，老手请自己分区）
+
+| 挂载点                | 划分                      | 分区类型              | 建议大小     |
+| :-------------------- | ------------------------- | --------------------- | ------------ |
+| /mnt/boot OR /mnt/efi | /dev/efi_system_partition | EFI system partition  | 大于200 MiB  |
+| [SWAP]                | /dev/swap_partition       | Linux swap            | 总内存的一半 |
+| /mnt                  | /dev/root_partition       | Linux x86-64 root (/) | 剩余空间     |
+
+## 开始分区
+
+```bash
+fdisk /dev/sdx
+```
