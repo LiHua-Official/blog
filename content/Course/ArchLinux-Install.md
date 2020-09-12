@@ -49,14 +49,14 @@ ls /sys/fi<Tab><Tab>
 
 执行 `iwctl` 进入交互模式  
 然后显示交互式提示，前缀为`[iwd]#`  
-通过 `station wl<Tab> connect <Tab>` 选择SSID连接。
+通过 `s<Tab> w<Tab> c<Tab> <Tab>` 选择SSID连接。
 
 ### 静态IP分配  
 
 检查是否已通过DHCP分配ip地址。
 
 ```bash
-ip addr show
+ip a<Tab>
 ```
 
 若已分配IP地址，可跳转至[连通测试](#连通测试)；若无，手动分配ip地址。  
