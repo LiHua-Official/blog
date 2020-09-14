@@ -14,11 +14,10 @@
 
 [[socials]]
     id = "email"
-    url = "mailto:lihua@email.com"
+    url = "https://www.lihuablog.tk/about#Email"
     icon = "envelope"
     title = "Email"
     weight = 2
-
 [[socials]]
     id = "github"
     url = "https://github.com/LiHua-Official"
