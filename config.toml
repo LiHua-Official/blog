@@ -1,7 +1,7 @@
 ##########################################
 # 站点配置
 
-baseURL = "https://lihuablog.tk/"
+baseURL = "https://lihua.ac.cn/"
 title = "Li Hua's Blog"
 languageCode = "zh-CN"
 hasCJKLanguage = true
