@@ -98,9 +98,9 @@ uglyURLs = false
     # 头像
     avatar = "/icons/apple-touch-icon.png"
     # 网站（默认值：baseURL）
-    website = "https://lihuablog.tk"
+    website = "https://lihua.ac.cn"
     # 推特
-    twitter = "Lihua_Official"
+    twitter = "CPCP_Lihua"
 
 # 相关文章
 [related]
