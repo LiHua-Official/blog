@@ -4,7 +4,7 @@ date: 2020-09-09T15:07:11+08:00
 
 description: "关于我"
 
-tags: ["关于","About"]
+tags: []
 
 draft: true
 ---
