@@ -160,5 +160,5 @@ fdisk /dev/sda
 ![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/Arch%20Linux-2020-09-10-20-06-29.png)
 #### 删除所有分区
 `d`，`<Enter>`，`<Enter>`，`d`，`<Enter>`，`<Enter>`...
-#### 新建分区
-`n`
+#### 新建分区(示例)
+`n`,`<Enter>`,`+200MiB`,`<Enter>`,`n`,`<ENter>`,
