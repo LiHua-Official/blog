@@ -14,7 +14,7 @@
 
 [[socials]]
     id = "email"
-    url = "https://www.lihuablog.tk/about#Email"
+    url = "https://lihua.ac.cn/about#Email"
     icon = "envelope"
     title = "Email"
     weight = 2
