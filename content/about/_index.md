@@ -14,7 +14,7 @@ draft: true
 # Email
 lihua@email.com  
 PGP KeyID: 8dd0283d1bd8d61959c8914eceaa11d8f5265af8  
-[公钥](/lihua@email.asc)：
+[公钥](/lihua@email.com.asc)：
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
