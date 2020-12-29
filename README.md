@@ -1,1 +1,1 @@
-![](static/0.png)
+![](https://cdn.jsdelivr.net/gh/LiHua-Official/pic/blog.png)
