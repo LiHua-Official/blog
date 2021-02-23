@@ -1,62 +1,66 @@
 ##########################################
-# 站点配置
+# Site Settings
 
 baseURL = "https://lihua.ac.cn/"
-title = "Li Hua's Blog"
-languageCode = "zh-CN"
+title = "Li Hua's blog"
+languageCode = "en"
 hasCJKLanguage = true
-# 版权信息（支持 Markdown）
-copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
+# Copyright information (Markdown supported)
+copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)"
 
-# 主题选择
+# Name of theme
 theme = "meme"
 
-# hugo new` 新建文章自动打开的文本编辑器
-newContentEditor = "nvim"
+# `hugo new` automatically opened text editor
+newContentEditor = ""
 
 # i18n
-defaultContentLanguage = "zh"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
-# 是否复数化列表页面的标题
+# Pluralize titles in lists?
 pluralizeListTitles = false
 
-# 摘要的字数限制
+# The length of text in words to show in summary
 summaryLength = 42
 
-# 是否开启 GitHub 风格的 Emoji 书写方式
-enableEmoji = true 
+# Enable Emoji emoticons support?
+enableEmoji = false
 
-# 脚注的返回链接中的文本
+# Text to display for footnote return links
 footnoteReturnLinkContents = "↩"
 
-# 是否启用 Git 版本信息
-enableGitInfo = true
+# Enable `.GitInfo` object for each page?
+enableGitInfo = false
 
-# 是否生成 robots.txt 文件
+# Enable generation of `robots.txt` file?
 enableRobotsTXT = true
 
-# 每一分页的文章数（仅对「文章摘要」首页布局有效）
+# Number of items per page in paginated
+# lists (valid for the `posts` homepage
+# layout in MemE)
 paginate = 5
 
-# URL 相关
+# URL related
 disablePathToLower = false
-relativeURLs = true
+relativeURLs = false
 uglyURLs = false
 
-# URL 结构
+# URL structure
 [permalinks]
     categories = "/categories/:slug/"
     tags = "/tags/:slug/"
 
+# Taxonomies
 [taxonomies]
+    category = "categories"
     tag = "tags"
 
-# 修改时间
+# Modified date
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
-# Markdown 渲染器
+# Markdown renderer
 [markup]
     defaultMarkdownHandler = "goldmark"
     [markup.goldmark]
@@ -67,7 +71,7 @@ uglyURLs = false
             strikethrough = true
             table = true
             taskList = true
-            typographer = false
+            typographer = true
         [markup.goldmark.parser]
             attribute = true
             autoHeadingID = true
@@ -87,22 +91,22 @@ uglyURLs = false
         endLevel = 6
         ordered = true
 
-# 作者信息
+# Author’s information
 [author]
-    # 名字
-    name = "Li Hua"
-    # 邮箱
-    email = "lihua@email.com"
-    # 座右铭或简介
-    motto = "ASS ME CAN"
-    # 头像
+    # Name
+    name = "reuixiy"
+    # Email
+    email = "reuixiy@gmail.com"
+    # Motto or introduction
+    motto = "Viva La Vida"
+    # Avatar
     avatar = "/icons/apple-touch-icon.png"
-    # 网站（默认值：baseURL）
-    website = "https://lihua.ac.cn"
-    # 推特
-    twitter = "CPC_Lihua"
+    # Personal website, default: baseURL
+    website = "https://io-oi.me/"
+    # Twitter
+    twitter = "reuixiy"
 
-# 相关文章
+# Related content
 [related]
     threshold = 80
     includeNewer = true
@@ -118,180 +122,207 @@ uglyURLs = false
         weight = 10
         pattern = "2006"
 
-# Atom 文件格式的媒体类型
+# MIME type of Atom
 [mediaTypes."application/atom+xml"]
     suffixes = ["xml"]
 
-# MemE 主题自定义的 Atom 模板
+# Custom Atom template of MemE
 [outputFormats.SectionsAtom]
     mediaType = "application/atom+xml"
     baseName = "atom"
 
-# MemE 主题自定义的 RSS 模板
+# Custom RSS template of MemE
 [outputFormats.SectionsRSS]
     mediaType = "application/rss+xml"
     baseName = "rss"
 
-# lunr.js 的搜索索引
+# Search index for lunr.js
 [outputFormats.SearchIndex]
-     mediaType = "application/json"
-     baseName = "search"
+    mediaType = "application/json"
+    baseName = "search"
 
-# Hugo 的输出控制
+# Hugo’s output control
 [outputs]
     page = ["HTML"]
     home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex"]
-    # home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
     taxonomy = ["HTML"]
     term = ["HTML"]
 
-# RSS & Atom 文章数限制
+# Maximum number of items in the Atom & RSS feed
 [services.rss]
     limit = -1
 
 
 
 ##########################################
-# 菜单配置
+# Menu Settings
 
-# MemE 主题支持以下四种菜单：
-# 1. main       顶栏下方（居中布局）或里面（弹性
-#               布局）的菜单栏
-# 2. home       首页的底部链接（适用于「诗意
-#               人生」和「视频片段」布局）
-# 3. socials    社交栏（关于页面的极简页脚）
-# 4. links      链接栏（关于页面的极简页脚）
+# MemE supports the following four menus:
+# 1. main       Menu bar below the header
+#               (center layout) or inside
+#               the header (flex layout)
+# 2. home       Links at the bottom of the
+#               homepage (valid for the
+#               `poetry` and `footage`
+#               homepage layout)
+# 3. socials    Social bar (minimal footer
+#               in about page)
+# 4. links      Link bar (minimal footer
+#               in about page)
 
-# 菜单内的配置说明如下：
-# url           链接地址
-# name          文本（留空（""）则无）
-# weight        位置
-# pre           内链（internal）或外链（external）
-# post          图标（留空（""）则无）
-# identifier    图标的 Class 名
-#               （对于弹性布局的顶栏有三个特殊
-#               的值：`theme-switcher`、
-#               `lang-switcher`、`search`）
+# The configuration instructions in the
+# menu are as follows:
+# url           URL
+# name          Text (won’t display if it
+#               is left empty("") or does
+#               not exist)
+# weight        Position
+# pre           Type of link (internal or
+#               external)
+# post          Icon (won’t display if it
+#               is left empty("") or does
+#               not exist)
+# identifier    Icon’s class name
+#               (there are three special
+#               values for header layout
+#               flex: `theme-switcher`,
+#               `lang-switcher`, `search`)
 
 [menu]
-    ## 菜单栏
-     [[menu.main]]
-        url = "/"
-        name = "首页"
-        weight = 1
+    ## Menu bar
+    # [[menu.main]]
+    #     url = "/"
+    #     name = "Home"
+    #     weight = 1
+    #     pre = "internal"
+    #     post = "home"
+    [[menu.main]]
+        url = "/posts/"
+        name = "Posts"
+        weight = 2
         pre = "internal"
-        post = "home"
+        post = "archive"
     [[menu.main]]
         url = "/categories/"
-        name = "分类"
-        weight = 2
+        name = "Categories"
+        weight = 3
         pre = "internal"
         post = "th"
     [[menu.main]]
         url = "/tags/"
-        name = "标签"
-        weight = 3
+        name = "Tags"
+        weight = 4
         pre = "internal"
         post = "tags"
     [[menu.main]]
         url = "/about/"
-        name = "关于"
-        weight = 4
+        name = "About"
+        weight = 5
         pre = "internal"
         post = "user-circle"
     [[menu.main]]
-        weight = 5
+        weight = 6
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 6
+        weight = 7
         identifier = "lang-switcher"
     [[menu.main]]
-        weight = 7
+        weight = 8
         identifier = "search"
         post = "search"
 
+
+
 ##########################################
-# 主题配置
+# Theme Settings
 
 [params]
     ######################################
-    # 顶栏
+    # Header
 
-    # 是否开启
     enableHeader = true
 
-    # 是否在首页显示
-    displayHeaderInHome = false
-    # 说明：对弹性布局的顶栏无效
+    enableHeaderAutoHide = false
+    # Note: works for header layout flex only
 
-    # 背景
-    headerBackground = "no-repeat url('https://cdn.jsdelivr.net/gh/LiHua-Official/BingPic/latest/zh_CN.jpeg');"
-    # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
+    displayHeaderInHome = true
+    # Note: invalid for header layout flex
 
-    # 顶栏布局
+    headerBackground = "linear-gradient(90deg, #f795331a 0, #f370551a 15%, #ef4e7b1a 30%, #a166ab1a 44%, #5073b81a 58%, #1098ad1a 72%, #07b39b1a 86%, #6dba821a 100%)"
+    # Note: https://developer.mozilla.org/en-US/docs/Web/CSS/background
+
     headerLayout = "flex"
-    # 说明：居中布局（center）或弹性布局（flex）
+    # Note: center or flex
 
-    # 在窄视图下隐藏菜单栏并显示一个按钮？
+    # Hide menu bar and display a toggle
+    # on narrow screen?
     enableNavToggle = true
 
     navHeight = "10em"
-    # 说明：菜单栏展开时的高度
+    # Note: menu bar height when it’s
+    #       toggled
+
 
     ######################################
-    # 品牌栏（在顶栏内）
+    # Brand Bar (inside header)
 
-    # 是否使用 SVG 图片
+    # Use SVG?
     siteBrandSVG = false
-    # 如果是，请将你的 SVG 放到 `SVG.toml` 文
-    # 件内，并配置以下项。单位：px。
+    # If true, put your SVG in the `SVG.toml`
+    # file and configure the following options.
+    # Unit: px
     siteBrandSVGWidth = 250
     siteBrandSVGHeight = 100
     siteBrandSVGFill = "#fff"
-    # 如果否，则会使用你的站点标题作为默认值，并
-    # 以文字的形式显示，下方可配置字号和字色。字
-    # 体请到底部的字体部分配置。单位：em。
+    # If false, your site title will be
+    # used as the default and displayed as
+    # text. The font size and font color
+    # can be configured below. The font
+    # family can be configured in typography
+    # section at the bottom of this file.
+    # Unit: em
     siteBrandFontSize = 1
     siteBrandFontColor = "var(--color-contrast-high)"
 
 
     ######################################
-    # 菜单栏
+    # Menu Bar
 
-    # 是否开启
     enableMenu = true
-    # 说明：对弹性布局的顶栏无效
+    # Note: invalid for header layout flex
 
-    # 是否在首页显示
     displayMenuInHome = true
-    # 说明：对弹性布局的顶栏无效
+    # Note: invalid for header layout flex
 
-    # 是否按文章分区高亮当前菜单项
-    activeInSection = true
-    # 说明：如果开启，那么当某一文章的分区名是某
-    #      一菜单项中的 `url` 时，该文章页面中
-    #      的该菜单项也会被高亮
+    # Highlight current menu item by section?
+    activeInSection = false
+    # Note: if true, the menu item in the
+    #       post page will be highlighted
+    #       also if that post’s section is
+    #       the `url` of that menu item
 
 
     ######################################
-    # 首页布局
+    # Homepage Layout
 
-    # MemE 主题有以下四种首页布局：
-    # 1. poetry    诗意人生
-    # 2. footage   视频片段
-    # 3. posts     文章摘要
-    # 4. page      普通页面
+    # For homepage layout, MemE has the
+    # following four different types:
+    # 1. poetry    A few lines of verse
+    # 2. footage   With fullscreen background videos
+    # 3. posts     List of post’s summary
+    # 4. page      Normal page/post
 
     homeLayout = "posts"
 
-    ## 「诗意人生」
-    # 诗句，支持 Markdown
-    homePoetry = ['越过长城，走向世界']
-    # 底部链接的内间距，单位：em
+    ## Poetry
+    # Verse (Markdown supported)
+    homePoetry = []
+    # Padding of links at the bottom
+    # Unit: em
     homeLinksPadding = 1
 
-    ## 「视频片段」
+    ## Footage
     homePoster = ""
     homeVideoWebm = ""
     homeVideoMp4 = ""
@@ -305,198 +336,227 @@ uglyURLs = false
 
 
     ######################################
-    # 站点信息
+    # Site Info
 
-    # 站点的 LOGO
     siteLogo = "/icons/apple-touch-icon.png"
-    # 说明：用于 JSON-LD、Open Graph
+    # Note: used for JSON-LD, Open Graph
 
-    # 站点的描述
-    siteDescription = "越过长城，走向世界"
-    # 说明：用于 HTML 的头部元数据、JSON-LD、
-    #      Open Graph、Atom、RSS
+    siteDescription = "MemE is a powerful and highly customizable GoHugo theme for personal blogs."
+    # Note: used for HTML head meta, JSON-LD,
+    #       Open Graph, Atom, RSS
 
-    # 站点的创建时间
-    siteCreatedTime = "2019-12-31T20:17:43+00:00"
-    # 注意：请保持此格式，更改数字
+    siteCreatedTime = "1969-07-20T20:17:43+00:00"
+    # ATTENTION: keep this format, change
+    #            the number
 
-    # 站点的推特帐号
-    siteTwitter = "CPC_Lihua"
-    # 说明：用于 Twitter Cards
+    siteTwitter = "reuixiy"
+    # Note: used for Twitter Cards
 
 
     ######################################
-    # 分类方式
+    # Category By
 
-    # MemE 主题支持以下两种分类方式：
-    # 1. sections       分区
-    # 2. categories     部类
-    # 其中，分区是基于站点的 content 目录下的
-    # 文件夹和子文件夹；部类是基于文章的 Front
-    # Matter。分类即树状分类，Hexo 是基于文章
-    # 的 Front Matter，Hugo 则是基于文件系统
-    # 的结构。由于设计理念的不同，导致了 Hexo
-    # 与 Hugo 的这个差异，故在此设计这个选项，
-    # 以对从 Hexo 过来的用户友好。但是请注意：
-    # Hugo 中无法完全实现基于 Front Matter
-    # 的树状分类，故如需保留树状分类，建议适应
-    # Hugo 的设计理念——分区。
+    # MemE supports category by:
+    # 1. sections
+    # 2. categories
+    # The sections is based on the site’s
+    # `content` directory structure; the
+    # categories is based on the post’s
+    # Front Matter. First of all, category
+    # means tree structure (nested, with
+    # sub-category). To achieve it, Hexo
+    # uses the second method, while Hugo
+    # uses the first method. Due to the
+    # different design philosophy, the
+    # difference between Hexo and Hugo has
+    # been made. Therefore, this option
+    # was designed here to be user friendly
+    # to those who come from Hexo. But note
+    # that the second method cannot be
+    # implemented perfectly in Hugo. I
+    # recommended you adapt to Hugo’s design
+    # philosophy if you want to keep the
+    # tree organization structure of your
+    # posts.
 
-    categoryBy = "sections"
-    # 注意：如果你设置为 `sections`，请务必将
-    #      此配置文件中的类别（taxonomies）中
-    #      的 `categories` 删除，不然分类页
-    #      面会失效。同时，你还需要自己新建一个
-    #      `content/categories/_index.md`
-    #      文件。
+    categoryBy = "categories"
+    # ATTENTION: If you set it to `sections`,
+    #            be sure to delete `categories`
+    #            in `taxonomies` at the top
+    #            of this file. Otherwise,
+    #            the categories page will
+    #            be invalid. Also, you need
+    #            to create a new
+    #            `content/categories/_index.md`
+    #            file by yourself.
 
 
     ######################################
-    # 分类页面
+    # Categories Page
 
-    # 是否开启树状布局
+    # Enable tree structure layout?
     enableTree = true
-    # 注意：如果你设置 categoryBy 为
-    # `sections`，则无法关闭树状布局
+    # ATTENTION: This option cannot be
+    #            disabled if you set
+    #            `categoryBy` to `sections`
 
-    # 是否显示文章标题
+    # Display title of posts?
     displayPosts = true
 
-    # 是否显示每一分类下的文章数
+    # Display count of posts under each
+    # category?
     displayPostsCount = true
 
-    # 设置一个非负数来限制每一分类下展示的文章数
+    # Set to a non-negative number to limit
+    # the number of posts displayed per
+    # category/section.
     limitPostsLimit = -1
 
 
     ######################################
-    # 标签页面
+    # Tags Page
 
-    # 是否开启标签云
     enableTagCloud = true
-    # 字号单位
+
     fontUnit = "em"
-    # 最大字号
     largestFontSize = 2.5
-    # 最小字号
     smallestFontSize = 1
 
 
     ######################################
-    # 列表页面
+    # List Page
 
-    # 宽度
     listWidth = 36
-    # 说明：如果留空（""），则用 42 作为默认值
-    #      单位：em
+    # Note: you can leave it empty("") to
+    #       fallback to the default value: 42
+    #       Unit: em
 
-    # 是否显示列表标题
     displayListTitle = true
 
-    # 日期的格式
-    listDateFormat = "1 月 2 日"
-    # 注意：请遵循格式 https://gohugo.io/functions/format/
+    listDateFormat = "January 2"
+    # ATTENTION: be sure to follow the
+    #            specified format
+    #            https://gohugo.io/functions/format/
 
-    # 日期的位置
     listDatePosition = "right"
-    # 说明：left（左边）或 right（右边）
+    # Note: left or right
 
-    # 是否按月份分隔列表
+    # Separate the list by month?
     groupByMonth = true
 
-    # 是否开启十二生肖
+    # Enable Chinese zodiac?
     chineseZodiac = true
 
-    # 是否翻译年份（仅对年份标题有效）
-    i18nYear = true
-    # 是否翻译月份（仅对月份标题有效）
-    i18nMonth = true
+    # Translate the year? (valid for title)
+    i18nYear = false
+    # Translate the month? (valid for title)
+    i18nMonth = false
 
 
     ######################################
-    # 类别列表页面
+    # Taxonomy List Page
 
-    # 说明：对于分类页面，你可以设置 `enableTree`
-    #      为 false 以得到一个普通的类别列表页
-    #      面；对于标签页面，你可以设置
-    #      `enableTagCloud` 为 false 以得到
-    #      一个普通的类别列表页面。
+    # Note: for categories page, you can
+    #       set `enableTree` to false to
+    #       get a normal taxonomy list
+    #       page; for tags page, you can
+    #       set `enableTagCloud` to false
+    #       to get a normal taxonomy list
+    #       page.
 
-    # 是否显示每一类别项下的文章数
+    # Display count of posts in each
+    # taxonomy term?
     displayTaxonomyTermCount = true
 
-    # 设置一个非负数来限制每一类别项下展示的文章数
+    # Set to a non-negative number to limit
+    # the number of posts displayed per
+    # taxonomy term.
     limitEntriesLimit = -1
 
 
     ######################################
-    # 文章分区范围
+    # Post Sections
 
-    # 说明：分区的名字即站点的 content 目录下
-    #      的文件夹的名字。
+    # Note: the name of the section is the
+    #       name of the folder under the
+    #       site’s `content` directory.
 
-    mainSections = ["Course","Test"]
+    # mainSections = ["posts"]
 
 
     ######################################
     # Atom & RSS
 
-    # 是否包括全文内容
+    # Include full content?
     includeContent = true
-    # 说明：如果否，则只会包含文章的摘要。关于摘
-    #      要，Hugo 能按你设置的字数限制自动截
-    #      取，你也可以在文章中通过
-    #      `<!--more-->`（没有空格）手动控制，
-    #      或者在文章的 Front Matter 中通过
-    #      `summary` 手动指定。其中，应用的优
-    #      先级顺序：手动指定 > 手动控制 > 自
-    #      动截取。还需要注意的是，在 MemE 主
-    #      题自定义的 Atom 和 RSS 的模板中，
-    #      有一个比手动指定更高的优先级——
-    #      Front Matter 中的 `description`。
+    # Note: If false, only the summary of
+    #       the post will be included. The
+    #       summary, Hugo automatically
+    #       takes the first 70 words (you
+    #       can customize this via
+    #       `summaryLength`) of your content
+    #       as its summary by default.
+    #       Alternatively, you may use the
+    #       <!--more--> (with no whitespace)
+    #       summary divider to split summary
+    #       manually. Or use the `summary`
+    #       variable in post’s Front
+    #       Matter to assign it manually.
+    #       The priority of them: assign
+    #       manually > split manually >
+    #       split automatically. Additionally,
+    #       `description` in post’s Front
+    #       Matter has a higher priority
+    #       than assign manually in the
+    #       custom Atom & RSS template of
+    #       MemE.
 
 
     ######################################
-    # 深色模式
+    # Dark Mode
 
-    # 是否开启
     enableDarkMode = true
 
-    # 默认模式
     defaultTheme = "light"
-    # 说明：light（浅色模式）或 dark（深色模式）
+    # Note: light or dark
 
-    # 是否隐藏模式切换开关
     hideThemeToggle = false
-    # 是否在首页隐藏模式切换开关
     hideThemeToggleInHome = false
-    # 说明：如果开启了深色模式，即使你隐藏了开关，
-    #      你的读者依然可能以深色模式阅读你的博
-    #      客，如果该读者的系统设置为深色模式的
-    #      话。类似，如果你开启深色模式并将默认
-    #      模式修改为它，即使你隐藏开关，你的读
-    #      者依然可能以浅色模式模式阅读你的博客。
-    #      除非，你开启下方这个选项。
+    # Note: If dark mode is enabled and
+    #       theme toggle is hidden, your
+    #       readers may still read your
+    #       blog in dark mode if the
+    #       reader’s system is set to dark
+    #       mode. Similarly, if dark mode
+    #       is enabled and is set to the
+    #       default theme, your readers
+    #       may still read your blog in
+    #       light mode, even if you have
+    #       hidden the theme toggle.
+    #       Unless you enable the following
+    #       option.
 
     overrideSystemPreferences = false
 
 
     ######################################
-    # 网页应用
+    # Web App
 
-    # 说明：前往 https://realfavicongenerator.net/
-    #      生成相关图标和文件，下载后解压，仅保留
-    #      android-chrome-512x512.png、
-    #      apple-touch-icon.png、
-    #      mstile-150x150.png、
-    #      safari-pinned-tab.svg、favicon.ico、
-    #      site.webmanifest 这些文件，删除其余。
-    #      然后将这些文件移动到 ~/blog/static/icons/
-    #      目录下，再将 favicon.ico、site.webmanifest
-    #      移动到 ~/blog/static/ 目录下，
-    #      最后将 site.webmanifest 重命名为
-    #      manifest.json，并检查和修改相关内容
-    #      （图标的路径）。
+    # Note: go to https://realfavicongenerator.net/
+    #       to generate related icons and
+    #       files, unzip after downloading,
+    #       and keep only android-chrome-512x512.png,
+    #       apple-touch-icon.png, mstile-150x150.png,
+    #       safari-pinned-tab.svg, favicon.ico,
+    #       site.webmanifest these files,
+    #       delete the rest. Then move
+    #       these files to the ~/blog/static/icons/
+    #       directory, move favicon.ico,
+    #       site.webmanifest to the ~/blog/static/
+    #       directory, and finally rename
+    #       site.webmanifest to manifest.json,
+    #       and check and modify related
+    #       content (the path of the icons).
 
     themeColor = "#fff"
     themeColorDark = "#16171d"
@@ -505,88 +565,95 @@ uglyURLs = false
 
 
     ######################################
-    # 网页头部元数据、搜索引擎优化（SEO）、社交网络发现
+    # HTML Head Meta, SEO & Social Discovery
 
     jsonLD = true
     openGraph = true
     twitterCards = true
-    # 注意：如果你设置 twitterCards 为 `true`，
-    #      请务必开启 openGraph。否则，网页的
-    #      Twitter Cards 信息将会不完整。
+    # ATTENTION: If you set twitterCards
+    #            to `true`, be sure to
+    #            enable openGraph also.
+    #            Otherwise, the Twitter
+    #            Cards info will be
+    #            incomplete.
 
-    # 是否自动探测图片
     autoDetectImages = true
-    # 说明：建议开启，否则，你必须在文章的 Front
-    #      Matter 中手动指定 `images`，不然，
-    #      你在社交网络或 APP 上分享的链接将无
-    #      法显示带大图的摘要视图。
+    # Note: It is recommended to enable it.
+    #       Otherwise, you must manually
+    #       specify `images` in post’s
+    #       Front Matter or links you
+    #       shared on social networks or
+    #       APPs will not be able to
+    #       display a summary view with a
+    #       large image.
 
 
     ######################################
     # Service Worker
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
 
     enableServiceWorker = false
 
 
     ######################################
-    # KaTeX 公式支持（包括化学方程式）
+    # KaTeX (chemical equation supported)
 
-    # 是否开启（全局设置）
-    enableKaTeX = true
-    # 说明：文章的 Front Matter 中的 `katex`
-    #      的优先级高于此处
+    enableKaTeX = false
+    # Note: *global settings*
+    #       `katex` in post’s Front Matter
+    #       has a higher priority than here
 
 
     ######################################
-    # MathJax 公式支持（包括化学方程式）
+    # MathJax (chemical equation supported)
 
-    # 是否开启（全局设置）
-    enableMathJax = true
-    # 说明：文章的 Front Matter 中的 `mathjax`
-    #      的优先级高于此处
+    enableMathJax = false
+    # Note: *global settings*
+    #       `mathjax` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否禁用 MathJax 的右键菜单
     disableMathJaxMenu = false
 
 
     ######################################
     # Mermaid (https://github.com/mermaid-js/mermaid)
 
-    # 是否开启（全局设置）
-    enableMermaid = true
-    # 说明：文章的 Front Matter 中的 `mermaid`
-    #      的优先级高于此处
+    enableMermaid = false
+    # Note: *global settings*
+    #       `mermaid` in post’s Front Matter
+    #       has a higher priority than here
 
     mermaidTheme = 'default'
     mermaidThemeDark = 'dark'
 
 
     ######################################
-    # 评论
+    # Comments
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
 
-    # 是否开启（全局设置）
-    enableComments = true
-    # 说明：文章的 Front Matter 中的 `comments`
-    #      的优先级高于此处
+    enableComments = false
+    # Note: *global settings*
+    #       `comments` in post’s Front Matter
+    #       has a higher priority than here
 
     ## Disqus
     enableDisqus = false
     disqusShortname = ""
 
     ## Valine
-    enableValine = true
-    valineAppId = "Vjwc0IOv21oNHwRzzVY6g1Ef-MdYXbMMI"
-    valineAppKey = "m8auIUBfBRjsDuXPQj33PE0t"
+    enableValine = false
+    valineAppId = ""
+    valineAppKey = ""
     valinePlaceholder = "Just go go"
     valinePath = ""
     valineAvatar = "mm"
     valineMeta = ["nick", "mail", "link"]
     valinePageSize = 10
-    valineLang = "zh-cn"
+    valineLang = "en"
     valineVisitor = false
     valineHighlight = true
     valineAvatarForce = false
@@ -594,9 +661,9 @@ uglyURLs = false
     valineServerURLs = ""
     valineEmojiCDN = ""
     valineEmojiMaps = {}
-    valineEnableQQ = true
+    valineEnableQQ = false
     valineRequiredFields = []
-    # 说明：https://valine.js.org/
+    # Note: https://valine.js.org/
 
     ## Utterances
     enableUtterances = false
@@ -605,19 +672,19 @@ uglyURLs = false
     utterancesTheme = "github-light"
     utterancesThemeDark = "photon-dark"
     utterancesLabel = ""
-    # 说明：https://utteranc.es/
+    # Note: https://utteranc.es/
 
 
     ######################################
     # Google Analytics
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
 
     enableGoogleAnalytics = false
 
-    # 跟踪代码的类型
     trackingCodeType = "gtag"
-    # 说明：gtag 或 analytics
+    # Note: gtag or analytics
 
     trackingID = ""
 
@@ -631,432 +698,424 @@ uglyURLs = false
     ######################################
     # Google AdSense
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
 
     googleAdClient = ""
 
-    ## 自动广告
+    ## Auto Ads
     enableGoogleAutoAds = false
 
-    ## 广告单元
+    ## Ad Units
     enableGoogleAdUnits = false
     googleAdSlot = ""
 
 
     ######################################
-    # 文章设置
+    # Post Settings
 
-    # 超链接的颜色变化持续时间（单位：秒）
+    # The color change duration of the
+    # hyperlink (in seconds)
     duration = 0.5
 
-    # 浅色模式的主色
+    # Primary color of light mode
     primaryColorLight = "220, 90%, 56%"
-    # 深色模式的主色
+    # Primary color of dark mode
     primaryColorDark = "201, 65%, 62%"
-    # 注意：只支持 HSL 颜色值
+    # ATTENTION: only HSL color values ​​are
+    #            supported
 
-    # 文章的内容宽度
+    # The content width of the post
     postWidth = 36
-    # 说明：如果留空（""），则用 42 作为默认值
-    #      单位：em
+    # Note: you can leave it empty("") to
+    #       fallback to the default value: 42
+    #       Unit: em
 
-    # 文章是否为原创（全局设置）
+    # Is the post original?
     original = true
-    # 说明：会影响文章的作者信息和版权信息
-    #      文章的 Front Matter 中的 `original`
-    #      的优先级高于此处
+    # Note: will affect the author and
+    #       copyright information of the
+    #       post
+    #       *global settings*
+    #       `original` in post’s Front Matter
+    #       has a higher priority than here
 
 
     ######################################
-    # 文章描述
+    # Post Description
 
-    # 是否显示
     displayPostDescription = true
 
 
     ######################################
-    # 文章元信息
+    # Post Meta Info
 
-    # 是否开启（全局设置）
     enablePostMeta = true
-    # 说明：文章的 Front Matter 中的 `meta`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `meta` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否在首页开启
     enablePostMetaInHome = true
-    # 说明：仅对「文章摘要」和「普通页面」
-    #      首页布局有效
+    # Note: valid for the `posts` and
+    #       `page` homepage layout only
 
-    # 日期格式
     postMetaDateFormat = "2006.1.2"
-    # 注意：请遵循格式 https://gohugo.io/functions/format/
+    # ATTENTION: be sure to follow the
+    #            specified format
+    #            https://gohugo.io/functions/format/
 
-    # 是否显示发布时间
     displayPublishedDate = true
-    # 发布时间的图标
     publishedDateIcon = "calendar-alt"
 
-    # 是否显示修改时间
     displayModifiedDate = true
-    # 修改时间的图标
     modifiedDateIcon = "calendar-check"
 
-    # 是否显示过期时间
     displayExpiredDate = true
-    # 过期时间的图标
     expiredDateIcon = "calendar-times"
 
-    # 是否显示分类
     displayCategory = true
-    # 分类的图标
     categoryIcon = "folder"
-    # 分类之间的分隔符
     categoryDelimiter = "/"
 
-    # 是否显示字数统计
     displayWordCount = true
-    # 字数统计的图标
     wordCountIcon = "pencil-alt"
 
-    # 是否显示阅读时长
     displayReadingTime = true
-    # 阅读时长的图标
     readingTimeIcon = "clock"
 
-    # 是否显示不蒜子页面浏览量
-    displayBusuanziPagePV = true 
-    # 不蒜子页面浏览量的图标
+    displayBusuanziPagePV = false
     busuanziPagePVIcon = "eye"
-    # 说明：仅在生产环境（production）下渲染
-    #      首页暂不支持
-    #      https://busuanzi.ibruce.info/
+    # Note: render only in production
+    #       environment
+    #       Homepage is not supported yet
+    #       https://busuanzi.ibruce.info/
 
 
     ######################################
-    # Markdown 相关
+    # Markdown Related
 
-    # 在新标签页打开外链？
+    # Open external links in a new tab?
     hrefTargetBlank = true
 
 
     ######################################
-    # 文章目录
+    # Table of Contents
 
-    # 是否开启（全局设置）
-    enableTOC = true
-    # 说明：文章的 Front Matter 中的 `toc`
-    #      的优先级高于此处
+    enableTOC = false
+    # Note: *global settings*
+    #       `toc` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否显示目录标题
     displayTOCTitle = true
 
-    # 是否显示数字（全局设置）
     displayTOCNum = true
-    # 说明：文章的 Front Matter 中的 `tocNum`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `tocNum` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否链接文章的分节标题到目录
     linkHeadingsToTOC = true
 
 
     ######################################
-    # 分节标题锚点
+    # Headings Anchor
 
-    # 是否开启
     enableHeadingsAnchor = true
+    # Note: *global settings*
+    #       `anchor` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 分节标题的级别范围
+    # Level range of headings
     headingsOpt = "1-6"
-    # 说明：正则格式，默认 1-6，即 1|2|3|4|5|6，
-    #      即 h1 到 h6。
+    # Note: regex format, default value
+    #       is 1-6, which is 1|2|3|4|5|6,
+    #       which is h1 to h6.
 
-    # 锚点符号
     anchorSymbol = "#"
-    # 说明：锚点图标的优先级高于锚点符号
-    #      默认值：§
+    # Note: the anchorIcon has a higher
+    #       priority than anchorSybol
+    #       Default: §
 
-    # 锚点图标
     anchorIcon = "link"
-    # 说明：留空（""）则回退到锚点符号
+    # Note: you can leave it empty("") to
+    #       fallback to the anchorSymbol
 
-    # 是否开启锚点链接
     enableAnchorLink = true
 
-    # 是否自动隐藏锚点
     enableAnchorAutoHide = true
 
 
     ######################################
-    # 说明文字
+    # Caption
 
-    # 是否开启
     enableCaption = true
 
-    # 说明文字的前缀
     captionPrefix = "◎ "
 
 
     ######################################
-    # 图片外链
+    # Image Hosting
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
     #
-    #      只支持相对于网站根目录的绝对链接
-    #      比如：/images/meme.jpg
-    #      (~/blog/static/images/meme.jpg)
+    #       only support absolute URLs
+    #       relative to root, e.g.
+    #       /images/meme.jpg
+    #       (~/blog/static/images/meme.jpg)
 
-    # 是否开启
-    enableImageHost = true
+    enableImageHost = false
 
-    # 图片外链地址
-    imageHostURL = "https://cdn.jsdelivr.net/gh/LiHua-Official/pic/"
+    imageHostURL = "https://example.com/"
 
-    # 是否将 HTML 的头部元数据中的图片链接也替换为外链
-    headAlso = true 
+    # Replace the image link in the HTML
+    # head meta also?
+    headAlso = false
 
 
     ######################################
-    # 视频外链
+    # Video Hosting
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
     #
-    #      只支持相对于网站根目录的绝对链接
-    #      比如：/videos/meme.mp4
+    #       only support absolute URLs
+    #       relative to root, e.g.
+    #       /videos/meme.mp4
     #
-    #      且你添加的 HTML 代码必需以以下开头：
-    #      `<video src="`
+    #       and the HTML code you add must
+    #       start with `<video src="`
 
-    # 是否开启
     enableVideoHost = false
 
-    # 视频外链地址
     videoHostURL = "https://example.com/"
 
 
     ######################################
-    # 脚注
+    # Footnotes
 
-    # 是否用方括号包裹脚注的引用序号
+    # Use the square brackets to wrap
+    # the reference number?
     squareBrackets = true
 
-    # 替换脚注的返回链接中的文本为图标
+    # Replace the text in footnote return
+    # link with icon?
     footnoteReturnLinkIcon = "angle-up"
-    # 说明：如果不为空（""），则会用图标替换
-    #      `footnoteReturnLinkContents`
+    # Note: will replace
+    #       `footnoteReturnLinkContents`
+    #       with icon if it’s not
+    #       empty("")
 
-    # 是否自行插入分隔线
+    # Insert horizontal rule by yourself?
     insertHrBySelf = true
-    # 说明：如果是，则会将自动生成的分隔线删除。
-    #      实际上，你自己添加的分隔线会被删除。
-    #      如果你喜欢在 Markdown 中手动插入
-    #      `---` 以将文章的正文内容与脚注内容
-    #      分隔开来，那么这项设置将会非常有用。
+    # Note: If true, the automatically
+    #       generated horizontal rule
+    #       (<hr>) will be removed. In
+    #       fact, the horizontal rule you
+    #       added will be removed. This
+    #       option is very useful if you
+    #       prefer to add `---` to separate
+    #       the content from the footnote
+    #       in the Markdown file.
 
 
     ######################################
-    # 字体排版
+    # Typography
 
     ######################################
-    ## 字体
+    ## Font Family
 
-    # 说明：任何一项留空（""），浏览器都会回退到
-    #      主体字体 `fontFamilyBody`，故没必
-    #      要全部设置。此外，如果你的品牌栏用的
-    #      SVG，则可留空（""）品牌栏字体。
+    # Note: any option is empty(""),
+    #       fallback to `fontFamilyBody`
+    #       it will. Therefore, it is not
+    #       necessary to set all.
+    #       Additionally, you can leave
+    #       `fontFamilySiteBrand` empty("")
+    #       if you use SVG as your site
+    #       brand.
 
-    # 品牌栏
+    # Site brand
     fontFamilySiteBrand = ""
-    # 菜单栏
+    # Menu bar
     fontFamilyMenu = ""
-    # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题、表格的表头、定义列表中的术语
-    fontFamilyTitle = "'Noto Serif SC', 'EB Garamond', serif"
-    # 分节标题、目录标题
-    fontFamilyHeadings = "'Noto Serif SC', 'EB Garamond', serif"
-    # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览计数
-    fontFamilyCode = "'Source Code Pro', 'Noto Serif SC', monospace"
-    # 引用
+    # Post title, post subtitle, list title, year and month title of the list, related posts title, previous/next post title, header of table, term/name in a definition list
+    fontFamilyTitle = "'Comfortaa', sans-serif"
+    # Headings, toc title
+    fontFamilyHeadings = "'Comfortaa', sans-serif"
+    # Code, superscript, post meta info, post updated badge, post gitinfo, minimal footer, busuanzi site view counter
+    fontFamilyCode = "'Source Code Pro', monospace"
+    # Blockquotes
     fontFamilyQuote = ""
-    # 文章目录
+    # Table of contents
     fontFamilyTOC = ""
-    # 说明文字
+    # Caption
     fontFamilyCaption = ""
-    # 页脚
+    # Footer
     fontFamilyFooter = ""
-    # 主体
-    fontFamilyBody = "'EB Garamond', 'Noto Serif SC', serif"
+    # Body
+    fontFamilyBody = "'IBM Plex Serif', serif"
 
-    # 网络字体链接
-    fontsLink = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    # 说明：要想读者一定体验到你设置的字体，最好
-    #      采用网络字体。MemE 主题目前仅支持
-    #      Google Fonts 的链接，请前往
-    #      https://fonts.google.com/ 获取。
-    #      此项留空（""），则不会采用网络字体。
+    # Embed fonts link
+    fontsLink = "https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap"
+    # Note: In order for the reader to
+    #       experience the fonts you set,
+    #       it is best to use web fonts.
+    #       MemE currently only supports
+    #       Google Fonts, please go to
+    #       https://fonts.google.com/ to
+    #       get the link. If this is left
+    #       empty(""), web fonts will not
+    #       be used.
 
     ######################################
-    ## 字号（单位：px）
+    ## Font Size (unit: px)
 
-    fontSize = 16
+    fontSize = 18
 
     ######################################
-    ## 制表符的宽度
+    ## Tab Size
 
     tabSize = 4
 
     ######################################
-    ## 行间距
+    ## Line Height
 
-    lineHeight = 2
-    # 说明：只会应用到文章的段落和目录
+    lineHeight = 1.618
+    # Note: apply to post paragraph & toc
+    #       only
 
     ######################################
-    ## 段首缩排
+    ## Paragraph Indents
 
-    # 是否开启
     enableParagraphIndent = true
 
-    # 是否缩进第一段（全局设置）
     indentFirstParagraph = false
-    # 说明：文章的 Front Matter 中的 `indentFirstParagraph`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `indentFirstParagraph` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 分段样式（全局设置）
     paragraphStyle = "margin"
-    # 说明：段间距式（margin）或段首缩排（indent）
-    #      文章的 Front Matter 中的 `indent`
-    #      的优先级高于此处
+    # Note: margin or indent
+    #       *global settings*
+    #       `indent` in post’s Front Matter
+    #       has a higher priority than here
 
     ######################################
-    ## 两端对齐
+    ## Text Justification
 
-    # 是否开启（全局设置）
-    enableJustify = true
-    # 说明：文章的 Front Matter 中的 `align`
-    #      的优先级高于此处
+    enableJustify = false
+    # Note: *global settings*
+    #       `align` in post’s Front Matter
+    #       has a higher priority than here
 
     ######################################
-    ## 首字下沉
+    ## Drop Cap
 
-    # 是否开启（全局设置）
-    enableDropCap = false 
-    # 说明：文章的 Front Matter 中的 `dropCap`
-    #      的优先级高于此处
+    enableDropCap = true
+    # Note: *global settings*
+    #       `dropCap` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否在每一分隔线之后首字下沉（全局设置）
+    # Enable drop cap after every
+    # horizontal rule tag?
     enableDropCapAfterHr = false
-    # 说明：文章的 Front Matter 中的 `dropCapAfterHr`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `dropCapAfterHr` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否删除首字下沉前的分隔线（全局设置）
+    # Delete horizontal rule tag before
+    # drop cap?
     deleteHrBeforeDropCap = false
-    # 说明：文章的 Front Matter 中的 `deleteHrBeforeDropCap`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `deleteHrBeforeDropCap` in post’s Front Matter
+    #       has a higher priority than here
 
     ######################################
-    ## 大型小写（英文）
+    ## Small Caps
 
-    # 是否开启（全局设置）
     enableSmallCaps = true
-    # 说明：只会应用到分节标题和目录标题
-    #      文章的 Front Matter 中的 `smallCaps`
-    #      的优先级高于此处
+    # Note: apply to headings & post toc
+    #       title only
+    #       *global settings*
+    #       `smallCaps` in post’s Front Matter
+    #       has a higher priority than here
 
     ######################################
-    ## 着重号
+    ## Emphasis Point (Chinese)
 
-    # 说明：MemE 主题自创的新 Markdown 语法
-    #      `..文本..`
+    # Note: new Markdown syntax created by MemE
+    #       `..文本..`
 
-    # 是否开启
-    enableEmphasisPoint = true
+    enableEmphasisPoint = false
 
     ######################################
-    ## 中文标点符号字形纠正
+    ## Chinese Punctuation Glyph Correction
 
-    # 是否开启
-    enableChinesePunctuationGlyphCorrection = true
+    enableChinesePunctuationGlyphCorrection = false
 
 
     ######################################
-    # 文章版权
+    # Post Copyright
 
-    # 是否开启
     enablePostCopyright = true
 
-    # 是否显示（全局设置）
     displayPostCopyright = true
-    # 说明：文章的 Front Matter 中的 `displayCopyright`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `displayCopyright` in post’s Front Matter
+    #       has a higher priority than here
 
 
     ######################################
-    # 文章更新徽章
+    # Post Updated Badge
 
-    # 是否开启
     enablePostUpdatedBadge = true
 
-    # 是否显示（全局设置）
     displayUpdatedBadge = true
-    # 说明：文章的 Front Matter 中的 `badge`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `badge` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 是否添加 `title`
+    # Add `title` attribute?
     enableBadgeTitle = true
-    # `title` 的前缀
     badgeTitlePrefix = "Updated @ "
 
 
     ######################################
-    # 文章的 Git 版本信息
+    # Post Gitinfo
 
-    # 是否开启
-    enablePostGitInfo = true
+    enablePostGitInfo = false
 
-    # 是否显示（全局设置）
-    displayPostGitInfo = true
-    # 说明：文章的 Front Matter 中的 `gitinfo`
-    #      的优先级高于此处
+    displayPostGitInfo = false
+    # Note: *global settings*
+    #       `gitinfo` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 仓库地址
-    repoURL = "https://github.com/LiHua-Official/blog"
-    # 编辑地址
-    repoEditURL = "https://gitee.com/-/ide/project/LiHua-Official/blog/edit/master/-"
+    repoURL = ""
+    repoEditURL = ""
 
-    # Git 的图标
     gitIcon = "code-branch"
-    # 是否显示改动哈希
     displayCommitHash = true
 
-    # 是否显示改动信息
     displayCommitMessage = true
-    # 改动信息的图标
     msgIcon = "info"
 
-    # 是否显示反馈链接
     displayFeedback = true
-    # 反馈链接的图标
     feedbackIcon = "question"
-    # 反馈链接的文本
     feedbackText = "Feedback"
 
-    # 是否显示编辑链接
     displayEditLink = true
-    # 编辑链接的图标
     editIcon = "edit"
-    # 编辑链接的文本
     editText = "Edit Me?"
 
 
     ######################################
-    # 文章分享
+    # Post Share
 
-    # 是否开启
     enablePostShare = true
 
-    # 是否显示（全局设置）
     displayPostShare = true
-    # 说明：文章的 Front Matter 中的 `share`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `share` in post’s Front Matter
+    #       has a higher priority than here
 
     displayShareOnText = false
 
@@ -1073,217 +1132,216 @@ uglyURLs = false
 
 
     ######################################
-    # 相关文章
+    # Related Posts
 
-    # 是否开启
     enableRelatedPosts = true
 
-    # 是否显示（全局设置）
     displayRelatedPosts = true
-    # 说明：文章的 Front Matter 中的 `related`
-    #      的优先级高于此处
+    # Note: *global settings*
+    #       `related` in post’s Front Matter
+    #       has a higher priority than here
 
-    # 相关文章数
     relatedPostsNumber = 5
 
-    # 相关文章标题右边的图标
     relatedPostsIcon = "plus-circle"
 
 
     ######################################
-    # 文章的标签
+    # Post Tags
 
-    # 是否开启
     enablePostTags = true
 
-    # 标签的图标
     postTagsIcon = "tag"
 
 
     ######################################
-    # 文章上下篇
+    # Previous/Next Post
 
-    # 说明：在 MemE 主题中，文章上下篇是从空间
-    #      位置角度设计的，而不是像大多数其它主
-    #      题所做的那样——从时间角度设计。因此，
-    #      如果你点击左边的上篇，跳转的是一篇更
-    #      新的文章；如果你点击右边的下篇，跳转
-    #      的是一篇更旧的文章。
+    # Note: In MemE, it is designed from a
+    #       spatial perspective rather
+    #       than a time perspective like
+    #       most other themes do.
+    #       Therefore, you will get a
+    #       newer post if you click prev
+    #       on the left; you will get an
+    #       older post if you click next
+    #       on the right.
 
-    # 是否开启
     enablePostNav = true
 
-    # 是否仅限于相同的文章分区
-    postNavInSection = false
+    # Apply to posts that below the same
+    # top level section only?
+    postNavInSection = true
 
 
     ######################################
-    # 极简页脚
+    # Minimal Footer
 
-    # 是否开启
-    enableMinimalFooter = true
-    enableVerticalBarStructure = true
-    # 说明：如果开启此项，显示在右边的部类或分区
-    #      将会包含全部的第一级部类或分区，并且
-    #      以竖线（|）分隔开来。
+    enableMinimalFooter = false
+    enableVerticalBarStructure = false
+    # Note: If you enable this, the
+    #       categories or sections that
+    #       displayed on the right will
+    #       include all top-level
+    #       categories or sections and are
+    #       separated by vertical bar(|).
 
-    # 是否开启关于页面的极简页脚
-    enableAboutPageMinimalFooter = true
+    enableAboutPageMinimalFooter = false
 
 
     ######################################
-    # 返回顶部按钮
+    # Back to Top
 
-    # 是否开启
     enableBackToTop = true
 
-    # 是否开启自动隐藏
     enableBackToTopAutoHide = true
 
-    # 是否在首页显示
     displayBackToTopInHome = true
 
-    # 按钮图标
+    displayBackToTopOnMobile = false
+
     backToTopIcon = "arrow-up"
 
 
     ######################################
-    # 页脚
+    # Footer
 
-    # 是否开启
     enableFooter = true
 
-    # 是否显示
     displayFooter = true
 
-    # 是否在首页显示
     displayFooterInHome = true
 
-    # 是否显示版权符号（©）
     displayCopyrightSymbol = true
 
-    # 是否显示站点的创建年份
     displaySiteCreatedYear = true
 
-    # 年份与作者之间的图标，留空（""）则无
+    # Leave it empty("") if you don’t want
+    # the icon
     iconBetweenYearAndAuthor = "heart"
-    # 图标颜色
     iconColor = "#f06292"
-    # 是否开启图标的跳动效果
+    # Enable heartbeat animation?
     iconAnimation = true
 
-    # 是否显示 Hugo 和 MemE 的链接
+    # Display links to Hugo and MemE?
     displayPoweredBy = true
 
-    # 是否显示站点的版权信息
     displaySiteCopyright = true
 
-    # 自定义页脚（支持 Markdown）
+    # Custom Footer (Markdown supported)
     customFooter = ""
 
     displayBusuanziSiteUVAndPV = false
-    busuanziSiteUVText = "本站访客数"
+    busuanziSiteUVText = "Site UV"
     busuanziSiteUVIcon = "user"
-    busuanziSitePVText = "本站访问量"
+    busuanziSitePVText = "Site PV"
     busuanziSitePVIcon = "eye"
-    # 说明：仅在生产环境（production）下渲染
-    #      文本或图标，留空（""）则无
-    #      https://busuanzi.ibruce.info/
+    # Note: render only in production
+    #       environment
+    #       Leave it empty("") if you
+    #       don’t need the text or icon
+    #       https://busuanzi.ibruce.info/
 
-    # 社交链接
+    # Socials
     enableSocials = true
-    # 说明：见 data/Socials.toml
+    # Note: see data/Socials.toml
+
 
     ######################################
-    # 多语言
+    # Multilingual
 
-    # 是否开启多语言按钮
-    enableLangToggle = true
+    enableLangToggle = false
 
-    # 是否在首页隐藏多语言按钮
     hideLangToggleInHome = false
 
-    # 是否自动隐藏多语言按钮
     autoHideLangToggle = true
-    # 说明：即仅当该文章有相应的翻译版本时才显
-    #      示按钮
+    # Note: in other words, the toggle is
+    #       displayed only when the post
+    #       has a translated version
 
 
     ######################################
-    # 代码块
+    # Code Blocks
 
-    # 是否开启高亮
     enableHighlight = true
 
-    # 是否开启竖直滚动
     enableOverflowY = true
-    # 最大高度
     maxHeight = 20
-    # 单位：em
+    # Unit: em
 
-    # 是否开启复制
     enableCopy = true
-    # 是否开启自动隐藏
     enableCopyAutoHide = true
 
 
     ######################################
-    # 文件指纹和子资源完整性（SRI）
+    # Fingerprinting and SRI
 
-    # 是否开启
+    # Note: valid for CSS and JS generated
+    #       by MemE only
+
     enableFingerprint = true
-    # 说明：仅对 MemE 生成的 CSS 和 JS 有效
+
+    enableSRI = false
+    # Note: subresource integrity will
+    #       block MemE CSS and JS on third
+    #       party websites like Google
+    #       Translate. To prevent this,
+    #       your server has to send the
+    #       following header for CSS and
+    #       JS requests:
+    #
+    #       Access-Control-Allow-Origin: *
 
 
     ######################################
-    # HTTPS 强制跳转
+    # Force HTTPS Redirection
 
-    # 说明：仅在生产环境（production）下渲染
+    # Note: render only in production
+    #       environment
 
-    # 是否开启
     enableForceHTTPS = false
-    # 说明：使用 JavaScript 来实现跳转。如果你
-    #      的服务器不支持强制 HTTPS 跳转，则可
-    #      开启此选项。
+    # Note: use JavaScript for redirection.
+    #       You can enable this if your
+    #       server does not support forced
+    #       HTTPS.
 
 
     ######################################
-    # 平滑滚动
+    # Smooth Scroll
 
-    # 是否开启
     enableSmoothScroll = true
 
 
     ######################################
-    # 图片缩放
+    # Medium Zoom
 
     enableMediumZoom = true
-    # 说明：https://github.com/francoischalifour/medium-zoom
+    # Note: https://github.com/francoischalifour/medium-zoom
 
 
     ######################################
     # Instant Page
 
     enableInstantPage = true
-    # 说明：https://github.com/instantpage/instant.page
+    # Note: https://github.com/instantpage/instant.page
 
 
     ######################################
-    # Lunr 搜索（暂不支持中文）
+    # Lunr search
 
-    # 说明：需要开启 `SearchIndex` 的输出
+    # Note: This requires SearchIndex
+    # output to be enabled.
 
     enableLunrSearch = true
-    # 说明：https://lunrjs.com/
+    # Note: https://lunrjs.com/
 
 
     ######################################
-    # 404 页面
+    # 404 Page
 
-    # 视频封面
     fofPoster = ""
 
-    # 视频地址
     fofVideoWebm = ""
     fofVideoMp4 = ""
-    # 说明：视频地址可留空（""）
+    # Note: you can leave these two
+    #       options empty("")
