@@ -15,7 +15,7 @@ minify:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
+    title: Li Hua's blog
     description: "ExampleSite description"
     author: Li Hua
     # author: ["Me", "You"] # multiple authors
@@ -86,7 +86,7 @@ params:
     # for search
     # https://fusejs.io/api/options.html
     fuseOpts:
-        isCaseSensitive: false
+        isCaseSensitive: true
         shouldSort: true
         location: 0
         distance: 1000
@@ -103,9 +103,9 @@ menu:
           name: tags
           url: /tags/
           weight: 20
-        - identifier: example
-          name: example.org
-          url: https://example.org
+        - identifier: Li Hua's blog
+          name: lihua.ac.cn
+          url: https://lihua.ac.cn
           weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
