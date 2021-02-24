@@ -103,10 +103,13 @@ menu:
           name: tags
           url: /tags/
           weight: 20
+        - identifier: search
+          url: /search/
+          weight: 30
         - identifier: Li Hua's blog
           name: lihua.ac.cn
           url: https://lihua.ac.cn
-          weight: 30
+          weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
