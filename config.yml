@@ -50,7 +50,7 @@ params:
     profileMode:
         enabled: true # needs to be explicitly set
         title: Li Hua's blog
-        subtitle: "<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>"
+        subtitle: '<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>'
         #imageUrl: "<img location>"
         imageWidth: 120
         imageHeight: 120
