@@ -3,9 +3,9 @@ title: Li Hua's blog
 paginate: 5
 theme: PaperMod
 enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
+buildDrafts: true
+buildFuture: true
+buildExpired: true
 
 googleAnalytics: UA-123-45
 
@@ -19,7 +19,7 @@ params:
     description: "ExampleSite description"
     author: Li Hua
     # author: ["Me", "You"] # multiple authors
-    images: ["<link or path of image for opengraph, twitter-cards>"]
+    # images: ["<link or path of image for opengraph, twitter-cards>"]
 
     defaultTheme: auto # dark, light
     disableThemeToggle: false
@@ -27,7 +27,7 @@ params:
     ShowReadingTime: true
     ShowShareButtons: true
     disableSpecial1stPost: false
-    comments: false
+    comments: true
     hidemeta: false
     showtoc: true
     tocopen: true
