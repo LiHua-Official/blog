@@ -14,12 +14,12 @@ params:
                 title: "<Title>" # optional default will be site title
                 subtitle: "This is subtitle"
                 imageUrl: "<image link>" # optional
-                imageTitle: "<title of image as alt>" # optional
+                # imageTitle: "<title of image as alt>" # optional
                 imageWidth: 120 # custom size
                 imageHeight: 120 # custom size
                 buttons:
                         - name: Archive
-                          url: "/archive"
+                          url: "/archives"
                         - name: Github
                           url: "https://github.com/"
                 # socialIcons: # optional
@@ -28,7 +28,7 @@ params:
                 #        - name: "<platform 2>"
                 #          url: "<link2>"
         fuseOpts:
-                isCaseSensitive: false
+                isCaseSensitive: true
                 shouldSort: true
                 location: 0
                 distance: 1000
