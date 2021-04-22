@@ -60,5 +60,6 @@ Package: metasploit*
 Pin: origin downloads.metasploit.com
 Pin-Priority: 1000
 EOF
-apt-get update &&apt-get install -y --allow-downgrades metasploit-framework
+apt-get update
+apt-get install -y --allow-downgrades metasploit-framework
 ```
