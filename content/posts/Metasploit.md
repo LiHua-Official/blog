@@ -1,8 +1,8 @@
 ---
-title: Use Metasploit-Framework in Termux
+title: Use the Metasploit framework in debian systems, including Termux
 ---
 ```bash
-echo "deb http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid main" > /data/data/com.termux/usr/etc/apt/sources.list.d/metasploit-framework.list
+echo "deb http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid main" > $PREFIX/apt/sources.list.d/metasploit-framework.list
 echo '-----BEGIN PGP PUBLIC KEY BLOCK-----
 mQINBFDAy/0BEAC8I5bw5gLQqHKx5JCacYcXFL6AZowl3qIOTxo5yfBl8CepNpWY
 OOERvIUJb17WehhhbWOo9WjpBalDXBRtI1NvfArewOT8fLm7BdhYe8U45moBfkYi
@@ -54,11 +54,11 @@ qCU0JkA1rVqS6PXZabKb9DOqYa4pr9thGS5rU+Gn3GWiSq2PtVW6Hh83WOFcEsMk
 2vTa24LE0J2DQg==
 =Qa/n
 -----END PGP PUBLIC KEY BLOCK-----' | apt-key add -
-mkdir -p /data/data/com.termux/usr/etc/apt/preferences.d/
- cat > /data/data/com.termux/usr/etc/apt/preferences.d/pin-metasploit.pref <<EOF
+mkdir -p $PREFIX/etc/apt/preferences.d/
+ cat > $PREFIX/etc/apt/preferences.d/pin-metasploit.pref <<EOF
 Package: metasploit*
 Pin: origin downloads.metasploit.com
 Pin-Priority: 1000
 EOF
-apt-get update &&¡¡apt-get install -y --allow-downgrades metasploit-framework
+apt-get update &&apt-get install -y --allow-downgrades metasploit-framework
 ```
