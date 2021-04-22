@@ -1,0 +1,18 @@
+---
+title: Kali metasploit windows终端中文乱码解决方案
+---
+
+# 原因：kali默认不启用GBK字符集
+
+编辑 /etc/locale.conf
+取消注释 
+```
+zh-CN gbk
+zh-TW gbk
+```
+# 更新字符集
+
+```bash
+# locale-gwn
+```
+# 完成
